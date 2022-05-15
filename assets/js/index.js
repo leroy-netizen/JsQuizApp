@@ -1,6 +1,6 @@
 let quiz = document.getElementById("quiz");
 let choices = Array.from(document.getElementsByClassName("text")); // Convert HTML collection to array
-console.log(choices);
+// console.log(choices);
 
 // initializing variables (state)
 
@@ -28,7 +28,7 @@ const quizes = [
     answer: 1,
   },
   {
-    quiz: "Which of the following statement(s) is true about the JavaScript? ",
+    quiz: "Which of the following statement(s) is true about  JavaScript? ",
     selection1:
       "It is a scripting language used to make the website interactive",
     selection2: "It is a markup language of Java to develop the webpages",
@@ -38,7 +38,7 @@ const quizes = [
     answer: 1,
   },
   {
-    quiz: "In which HTML element, we put the JavaScript code?",
+    quiz: "In which HTML element, we put JavaScript code?",
     selection1: "<javascript>...</javascript>",
     selection2: "<js>...</js>",
     selection3: "<script>...</script>",
@@ -46,7 +46,7 @@ const quizes = [
     answer: 4,
   },
   {
-    quiz: "Which symbol is used separate JavaScript statements?",
+    quiz: "Which symbol is used to separate JavaScript statements?",
     selection1: "Comma (,)",
     selection2: "Colon (:)",
     selection3: "Hyphen (_)",
@@ -54,7 +54,7 @@ const quizes = [
     answer: 4,
   },
   {
-    quiz: " JavaScript ignores?(4)",
+    quiz: " JavaScript ignores?",
     selection1: "spaces",
     selection2: "newlines",
     selection3: "tabs",
@@ -101,7 +101,7 @@ startPlaying = () => {
   quizCount = 0;
   score = 0;
   quizesLeft = [...quizes]; //spread through the quizes array. creates a copy of the array
-  console.log(quizesLeft);
+  //   console.log(quizesLeft);
   getNewQuiz();
 };
 // startPlaying();
@@ -124,11 +124,18 @@ getNewQuiz = () => {
 };
 choices.forEach((selection) => {
   selection.addEventListener("click", (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     if (!allowUserAnswer) return;
     allowUserAnswer = false;
     const userAns = e.target;
     const selectedAns = userAns.dataset["value"];
+
+    //   check for correct response and bind a class
+    const bindClass =
+      selectedAns == currentQuiz.answer ? "correct" : "incorrect";
+
+    console.log(bindClass);
+    // console.log(selectedAns == currentQuiz.answer);
     getNewQuiz(); //after answering a quiz, get a new one
   });
 });
