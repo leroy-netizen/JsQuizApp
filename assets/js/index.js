@@ -1,5 +1,7 @@
 let quiz = document.getElementById("quiz");
 let choices = Array.from(document.getElementsByClassName("text")); // Convert HTML collection to array
+let counter = document.getElementById("counter");
+let points = document.getElementById("points");
 // console.log(choices);
 
 // initializing variables (state)
@@ -59,6 +61,7 @@ const quizes = [
     selection2: "newlines",
     selection3: "tabs",
     selection4: "All of the above",
+    answer: 4,
   },
   {
     quiz: " Which JavaScript method is used to access an HTML element by id?",
@@ -94,7 +97,7 @@ const quizes = [
   },
 ];
 
-const MAX_QUIZES = 7;
+const MAX_QUIZES = 10;
 const CORRECT_SCORE_POINTS = 5;
 
 startPlaying = () => {
@@ -110,6 +113,8 @@ getNewQuiz = () => {
   if (quizesLeft.length === 0 || quizCount > MAX_QUIZES)
     return window.location.assign("/pages/score/score.html");
   quizCount++;
+
+  counter.innerText = quizCount + "/" + MAX_QUIZES;
   const quizIndex = Math.floor(Math.random() * quizesLeft.length);
 
   currentQuiz = quizesLeft[quizIndex];
@@ -131,9 +136,10 @@ choices.forEach((selection) => {
     const selectedAns = userAns.dataset["value"];
 
     //   check for correct response and bind a class
-    const bindClass =
-      selectedAns == currentQuiz.answer ? "correct" : "incorrect";
-
+    const bindClass = selectedAns == currentQuiz.answer ? "right" : "wrong";
+    if (bindClass == "right") {
+      scoreIncrement(CORRECT_SCORE_POINTS);
+    }
     console.log(bindClass);
     userAns.parentElement.classList.add(bindClass); //bind the incorrect or correct class
     // console.log(selectedAns == currentQuiz.answer);
@@ -144,4 +150,9 @@ choices.forEach((selection) => {
     }, 1200);
   });
 });
+
+scoreIncrement = (number) => {
+  score += number;
+  points.innerText = score; //new score
+};
 startPlaying();

@@ -40,9 +40,33 @@
     padding: 2rem;
 }
 /* Binding classes to check if correct or incorrect */
-.correct{
+.right{
     background-color: green;
 }
-.incorrect{
+.wrong{
     background-color: red;
 }
+
+#scoreDisplay-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(112, 86, 86, 0.5);
+  
+}
+
+#scoreDisplay-container > .scoreDisplay-item{
+    /* border: 1px solid red; */
+    margin-right: 10px;
+}
+ #scoreDisplay-container>.scoreDisplay-item>.main-text-header{
+     margin-top: -5px;
+     color: white;
+     font-weight: bold;
+     padding: 10px;
+ }
+ #scoreDisplay-container>.scoreDisplay-item > .main-text{
+     /* margin-left: 25px; */
+     margin-top: -15px;
+     text-align: center;
+     color: greenyellow;
+ }

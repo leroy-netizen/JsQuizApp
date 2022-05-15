@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: lightgray;
+    background-color: white;
     font-family: Arial, Helvetica, sans-serif;
    
 }
@@ -15,11 +15,12 @@ body{
     width: 70%;
     overflow: hidden;
     margin: auto;
-    height: 70vh;
+    height: 75vh;
     border-radius: 10px;
     background-image: url('../images/wood.jpg');
     background-size: cover;
     background-color: #fff;
+    box-shadow: 0 20px 20px 0 rgb(77, 65, 65, 0.);
 }
 
 /* Media query */
@@ -36,6 +37,18 @@ body{
      font-size: 5;
  }
 }
+@media (max-width: 393px) {
+.main{
+    overflow: scroll;
+}
+ .quiz {
+     font-size: 5;
+ }
+ .header{
+     text-align: center;
+ }
+ 
+}
 .card-header{
     background-color: rgb(112, 86, 86);
     opacity: 0.7;
@@ -49,7 +62,7 @@ body{
 
 .buttons{
     width: 50%;
-    margin-left: 22vw;
+    margin-left: 25vw;
     margin-top: 50px;
 }
 .btn{
@@ -82,12 +95,7 @@ body{
     transform: none;
     box-shadow: none;
 }
-/* .quiz-div{
-   
-    height: 5rem;
-    margin: auto;
-    color: white;
-}*/
+
 #quiz{
     color: white;
     margin-left: 20px;
