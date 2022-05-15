@@ -16,34 +16,60 @@ body{
     overflow: hidden;
     margin: auto;
     height: 70vh;
-    border-radius: 30px;
+    border-radius: 10px;
+    background-image: url('../images/wood.jpg');
+    background-size: cover;
     background-color: #fff;
 }
 .card-header{
-    background-color: red;
+    background-color: rgb(112, 86, 86);
+    opacity: 0.7;
     text-align: center;
     padding-top:10px;
     padding-bottom: 10px;
 }
-.card-body{
-    border: 1px solid green;
-    width: 30%;
-    overflow: none;
-    height: 20vh;
-    margin: auto;
-    margin-top: 20vw;
-    align-items: center;
-    text-align: center;
+
+.buttons{
+    width: 50%;
+    margin-left: 22vw;
+    margin-top: 50px;
 }
-.card-body h2{
-font-size: 2rem;
-margin-top: 40%;
+.btn{
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 10px 10px;
+    width: 15rem;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid brown;
+    opacity: 0.5;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+.btn a{
+    text-decoration: none;
+    color: black;
+}
+.btn:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: transform 250ms;
+   
+    box-shadow: 0 10px 10px 0 rgb(112, 86, 86); ;
 
 }
-.card-body h2 a{
-    text-decoration: none;
-    color: grey;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+/* will be disabled when we accept highscores */
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.quiz-div{
+    border: 1px solid green;
+    height: 5rem;
+    margin: auto;
+}
+.choices{
+
 }
 
