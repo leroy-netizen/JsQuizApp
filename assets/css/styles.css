@@ -1,5 +1,49 @@
 body{
     padding: 0;
     margin: 0;
-    background-color: red;
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+   
 }
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.main{
+    width: 70%;
+    overflow: hidden;
+    margin: auto;
+    height: 70vh;
+    border-radius: 30px;
+    background-color: #fff;
+}
+.card-header{
+    background-color: red;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.card-body{
+    border: 1px solid green;
+    width: 30%;
+    overflow: none;
+    height: 20vh;
+    margin: auto;
+    margin-top: 20vw;
+    align-items: center;
+    text-align: center;
+}
+.card-body h2{
+font-size: 2rem;
+margin-top: 40%;
+
+}
+.card-body h2 a{
+    text-decoration: none;
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
