@@ -8,7 +8,7 @@ let score = 0;
 let currentQuiz = {};
 let quizCount = 0;
 let quizesLeft = [];
-let acceptAnswers = true;
+let allowUserAnswer = false; //cannot answer until page fully loaded;
 
 const quizes = [
   {
@@ -107,6 +107,8 @@ startPlaying = () => {
 // startPlaying();
 
 getNewQuiz = () => {
+  if (quizesLeft.length === 0 || quizCount > MAX_QUIZES)
+    return window.location.assign("/pages/score/score.html");
   quizCount++;
   const quizIndex = Math.floor(Math.random() * quizesLeft.length);
 
@@ -117,6 +119,17 @@ getNewQuiz = () => {
     const value = selection.dataset["value"];
     selection.innerText = currentQuiz["selection" + value];
   });
+  quizesLeft.splice(quizIndex, 1); // get rid of the used question
+  allowUserAnswer = true;
 };
-
+choices.forEach((selection) => {
+  selection.addEventListener("click", (e) => {
+    console.log(e.target);
+    if (!allowUserAnswer) return;
+    allowUserAnswer = false;
+    const userAns = e.target;
+    const selectedAns = userAns.dataset["value"];
+    getNewQuiz(); //after answering a quiz, get a new one
+  });
+});
 startPlaying();
