@@ -135,8 +135,13 @@ choices.forEach((selection) => {
       selectedAns == currentQuiz.answer ? "correct" : "incorrect";
 
     console.log(bindClass);
+    userAns.parentElement.classList.add(bindClass); //bind the incorrect or correct class
     // console.log(selectedAns == currentQuiz.answer);
-    getNewQuiz(); //after answering a quiz, get a new one
+
+    setTimeout(() => {
+      userAns.parentElement.classList.remove(bindClass);
+      getNewQuiz(); //after answering a quiz, get a new one
+    }, 1200);
   });
 });
 startPlaying();

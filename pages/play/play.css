@@ -39,3 +39,10 @@
 #wrapper{
     padding: 2rem;
 }
+/* Binding classes to check if correct or incorrect */
+.correct{
+    background-color: green;
+}
+.incorrect{
+    background-color: red;
+}
