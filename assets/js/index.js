@@ -110,8 +110,11 @@ startPlaying = () => {
 // startPlaying();
 
 getNewQuiz = () => {
-  if (quizesLeft.length === 0 || quizCount > MAX_QUIZES)
+  if (quizesLeft.length === 0 || quizCount > MAX_QUIZES) {
+    localStorage.setItem("latestScore", score);
+
     return window.location.assign("/pages/score/score.html");
+  }
   quizCount++;
 
   counter.innerText = quizCount + "/" + MAX_QUIZES;
@@ -140,7 +143,7 @@ choices.forEach((selection) => {
     if (bindClass == "right") {
       scoreIncrement(CORRECT_SCORE_POINTS);
     }
-    console.log(bindClass);
+    // console.log(bindClass);
     userAns.parentElement.classList.add(bindClass); //bind the incorrect or correct class
     // console.log(selectedAns == currentQuiz.answer);
 

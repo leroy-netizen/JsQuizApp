@@ -1,0 +1,22 @@
+form{
+    margin-left: 17%;
+    display: flex;
+    flex-direction: column;
+}
+.score-container{
+    display: block;
+}
+#score{
+    color: white;
+    font-size: 4rem;
+    margin-left: 10%;
+}
+input{
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+}
+.input::placeholder{
+    color: black;
+}

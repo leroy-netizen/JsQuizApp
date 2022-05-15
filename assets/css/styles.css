@@ -20,7 +20,7 @@ body{
     background-image: url('../images/wood.jpg');
     background-size: cover;
     background-color: #fff;
-    box-shadow: 0 20px 20px 0 rgb(77, 65, 65, 0.);
+    box-shadow: 0 20px 20px 0 rgb(77, 65, 65, 2.0);
 }
 
 /* Media query */
@@ -63,7 +63,7 @@ body{
 .buttons{
     width: 50%;
     margin-left: 25vw;
-    margin-top: 50px;
+    margin-top: 90px;
 }
 .btn{
     text-decoration: none;

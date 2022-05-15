@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./score.css">
     <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="icon" href="../../assets/icons/quiz.png" type="image/icon type">
     <title>Scores</title>
 </head>
 <body>
@@ -13,8 +15,24 @@
             <div class="card-header">
                 <h1 class="head"> Scores </h1>
             </div>
-            <h1>SCOORES</h1>
+            <div class="container ">
+                <h1 id="score"></h1>
+                <form>
+                    <input type="text"
+                    name="playerName"
+                    id="playerName"
+                    placeholder="Enter you Name"
+                    />
+                    <button type="submit" class="btn" id="holdScore" onclick="holdScore(e)" disabled> Hold Score</button>
+                </form>
+            </div>
+     
+            <div class="buttons btn-1">
+                <p class="btn "><a href="../../pages/play/play.html"> Restart Game </a> </p>
+                <p class="btn "><a href="../../index.html"> Home </a> </p>
+            </div>
         </div>
     </div>
+    <script src="./score.js"></script>
 </body>
 </html>
