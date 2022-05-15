@@ -82,13 +82,15 @@ body{
     transform: none;
     box-shadow: none;
 }
-.quiz-div{
+/* .quiz-div{
    
     height: 5rem;
     margin: auto;
-}
-.quiz{
+    color: white;
+}*/
+#quiz{
     color: white;
     margin-left: 20px;
+    text-align: center;
 }
 

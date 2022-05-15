@@ -10,10 +10,11 @@
     cursor: pointer;
     transform: translateY(-2px);
     transition: transform 250ms;
-    background-color: rgb(90, 184, 90, 0.6);
+    background-color: rgb(240, 227, 227, 0.25);
     box-shadow: 0 10px 10px 0 rgb(112, 86, 86);
         
 }
+/* rgb(90, 184, 90, 0.6); */
 .choices .selection{
     background-color: rgb(79, 180, 79, 0.7);
     padding: 10px 15px;

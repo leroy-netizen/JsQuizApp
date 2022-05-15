@@ -1,18 +1,18 @@
-let quiz = document.getElementsByClassName("quiz");
-let selection = Array.from(document.getElementsByClassName("text")); // Convert HTML collection to array
-console.log(selection);
+let quiz = document.getElementById("quiz");
+let choices = Array.from(document.getElementsByClassName("text")); // Convert HTML collection to array
+console.log(choices);
 
 // initializing variables (state)
 
-var score = 0;
-var currentQuiz = {};
-var quizCount = 0;
-var allQuizes = [];
-var acceptAnswers = true;
+let score = 0;
+let currentQuiz = {};
+let quizCount = 0;
+let quizesLeft = [];
+let acceptAnswers = true;
 
 const quizes = [
   {
-    quiz: "If we want to set the style for just one element, which css selector will we use?(1)",
+    quiz: "If we want to set the style for just one element, which css selector will we use?",
     selection1: "id",
     selection2: "text",
     selection3: "class",
@@ -20,7 +20,7 @@ const quizes = [
     answer: 1,
   },
   {
-    quiz: " JavaScript is the programming language of the _____.(1)",
+    quiz: " JavaScript is the programming language of the _____.",
     selection1: "Web",
     selection2: "Mobile",
     selection3: "Desktop",
@@ -28,7 +28,7 @@ const quizes = [
     answer: 1,
   },
   {
-    quiz: "Which of the following statement(s) is true about the JavaScript? (1)",
+    quiz: "Which of the following statement(s) is true about the JavaScript? ",
     selection1:
       "It is a scripting language used to make the website interactive",
     selection2: "It is a markup language of Java to develop the webpages",
@@ -38,7 +38,7 @@ const quizes = [
     answer: 1,
   },
   {
-    quiz: "In which HTML element, we put the JavaScript code?(4)",
+    quiz: "In which HTML element, we put the JavaScript code?",
     selection1: "<javascript>...</javascript>",
     selection2: "<js>...</js>",
     selection3: "<script>...</script>",
@@ -46,7 +46,7 @@ const quizes = [
     answer: 4,
   },
   {
-    quiz: "Which symbol is used separate JavaScript statements?(4)",
+    quiz: "Which symbol is used separate JavaScript statements?",
     selection1: "Comma (,)",
     selection2: "Colon (:)",
     selection3: "Hyphen (_)",
@@ -61,7 +61,7 @@ const quizes = [
     selection4: "All of the above",
   },
   {
-    quiz: " Which JavaScript method is used to access an HTML element by id?(3)",
+    quiz: " Which JavaScript method is used to access an HTML element by id?",
     selection1: "elementById(id)",
     selection2: "getElement(id)",
     selection3: "getElementById(id)",
@@ -69,7 +69,7 @@ const quizes = [
     answer: 3,
   },
   {
-    quiz: " HTML is considered as ______ ? (4)",
+    quiz: " HTML is considered as ______ ? ",
     selection1: "Programming language",
     selection2: "OOP language",
     selection3: "High level language",
@@ -77,7 +77,7 @@ const quizes = [
     answer: 4,
   },
   {
-    quiz: "Which type of JavaScript language is ___(1)",
+    quiz: "Which type of JavaScript language is ___",
     selection1: "Object-Oriented",
     selection2: "Object-Based",
     selection3: "Assembly-language",
@@ -93,3 +93,30 @@ const quizes = [
     answer: 3,
   },
 ];
+
+const MAX_QUIZES = 7;
+const CORRECT_SCORE_POINTS = 5;
+
+startPlaying = () => {
+  quizCount = 0;
+  score = 0;
+  quizesLeft = [...quizes]; //spread through the quizes array. creates a copy of the array
+  console.log(quizesLeft);
+  getNewQuiz();
+};
+// startPlaying();
+
+getNewQuiz = () => {
+  quizCount++;
+  const quizIndex = Math.floor(Math.random() * quizesLeft.length);
+
+  currentQuiz = quizesLeft[quizIndex];
+  quiz.innerText = currentQuiz.quiz;
+
+  choices.forEach((selection) => {
+    const value = selection.dataset["value"];
+    selection.innerText = currentQuiz["selection" + value];
+  });
+};
+
+startPlaying();
