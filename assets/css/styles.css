@@ -21,12 +21,30 @@ body{
     background-size: cover;
     background-color: #fff;
 }
+
+/* Media query */
+@media (max-width: 360px) {
+.main{
+    overflow: scroll;
+}
+}
+@media (max-width: 390px) {
+.main{
+    overflow: scroll;
+}
+ .quiz {
+     font-size: 5;
+ }
+}
 .card-header{
     background-color: rgb(112, 86, 86);
     opacity: 0.7;
     text-align: center;
     padding-top:10px;
     padding-bottom: 10px;
+}
+.card-header .head{
+    color: #fff;
 }
 
 .buttons{
@@ -65,11 +83,12 @@ body{
     box-shadow: none;
 }
 .quiz-div{
-    border: 1px solid green;
+   
     height: 5rem;
     margin: auto;
 }
-.choices{
-
+.quiz{
+    color: white;
+    margin-left: 20px;
 }
 
