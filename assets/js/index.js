@@ -113,7 +113,7 @@ getNewQuiz = () => {
   if (quizesLeft.length === 0 || quizCount > MAX_QUIZES) {
     localStorage.setItem("latestScore", score);
 
-    return window.location.assign("/pages/score/score.html");
+    return window.location.assign("../../pages/score/score.html");
   }
   quizCount++;
 
